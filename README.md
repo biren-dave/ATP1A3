@@ -1,1 +1,1 @@
-# ATP1A3-mutations
+# ATP1A3
