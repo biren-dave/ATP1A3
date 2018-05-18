@@ -1,0 +1,4 @@
+\BOOKMARK [1][-]{section.1}{Generating PROVEAN and SIFT scores for variants}{}% 1
+\BOOKMARK [1][-]{section.2}{Making a feature matrix}{}% 2
+\BOOKMARK [1][-]{section.3}{Training the Support Vector Classifier \(SVC\)}{}% 3
+\BOOKMARK [1][-]{section.4}{Making predictions}{}% 4

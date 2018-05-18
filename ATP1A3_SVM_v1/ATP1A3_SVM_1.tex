@@ -1,0 +1,555 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{ATP1A3\_SVM\_1}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+
+    
+    \begin{Huge}
+    	\noindent
+    	Predicting the disease phenotypes of \textit{de novo} ATP1A3 variants\\
+    \end{Huge}
+    
+    
+\begin{Large}
+	\noindent
+	Biren Dave\\
+	May 7 2018
+\end{Large}
+
+\section{Generating PROVEAN and SIFT scores for
+variants}\label{generating-provean-and-sift-scores-for-variants}
+
+The following code cell reads the spreadsheet containing the ATP1A3
+mutations and generates an output file compatible with PROVEAN.
+\texttt{file\_reader} reads an input \texttt{delim}-delimited file and
+generated an ordered dictionary.
+
+PROVEAN requires input data to be space-delimited and formatted like
+this:
+\texttt{\textless{}Protein\_ID\textgreater{}\ \textless{}position\textgreater{}\ \textless{}reference\_residue(s)\textgreater{}\ \textless{}variant\_residue(s)\textgreater{}\ \textless{}comment\ (optional)\textgreater{}}.
+Multiple variants can be analyzed at once if they are line-delimited. To
+achieve appropriate formatting, the \texttt{provean\_input\_formatter}
+function has been implemented. Finally, an output \texttt{.txt} file is
+generated by the function \texttt{output\_writer}. This file can be
+directly uploaded to the online
+\href{http://provean.jcvi.org/protein_batch_submit.php?species=human}{PROVEAN
+server}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{csv}
+        
+        \PY{n}{NCBI\PYZus{}ref\PYZus{}id} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{NP\PYZus{}689509.1}\PY{l+s+s2}{\PYZdq{}}
+        
+        \PY{k}{def} \PY{n+nf}{file\PYZus{}reader}\PY{p}{(}\PY{n}{infile}\PY{p}{,} \PY{n}{delim}\PY{p}{)}\PY{p}{:}
+            \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+            \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{infile}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{k}{as} \PY{n}{fh}\PY{p}{:}
+                \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{csv}\PY{o}{.}\PY{n}{DictReader}\PY{p}{(}\PY{n}{fh}\PY{p}{,} \PY{n}{delimiter} \PY{o}{=} \PY{n}{delim}\PY{p}{)}\PY{p}{:}
+                    \PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row}\PY{p}{)}
+            \PY{k}{return} \PY{n}{data}
+        
+        \PY{k}{def} \PY{n+nf}{provean\PYZus{}input\PYZus{}formatter}\PY{p}{(}\PY{n}{l}\PY{p}{)}\PY{p}{:}
+            \PY{n}{provean\PYZus{}input} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+            \PY{k}{for} \PY{n}{variant} \PY{o+ow}{in} \PY{n}{l}\PY{p}{:}
+                \PY{n}{temp} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                \PY{k}{if} \PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{type}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Missense\PYZus{}Mutation}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                    \PY{n}{ref\PYZus{}aa} \PY{o}{=} \PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{substitution}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+                    \PY{n}{alt\PYZus{}aa} \PY{o}{=} \PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{substitution}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+                    \PY{n}{pos} \PY{o}{=} \PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{substitution}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+                    \PY{n}{disease} \PY{o}{=} \PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{disease}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                    \PY{n}{temp} \PY{o}{=} \PY{p}{[}\PY{n}{NCBI\PYZus{}ref\PYZus{}id}\PY{p}{,} \PY{n}{pos}\PY{p}{,} \PY{n}{ref\PYZus{}aa}\PY{p}{,} \PY{n}{alt\PYZus{}aa}\PY{p}{,} \PY{n}{disease}\PY{p}{]}
+                    \PY{n}{provean\PYZus{}input}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{temp}\PY{p}{)}
+                \PY{k}{else}\PY{p}{:}
+                    \PY{k}{pass}
+            \PY{k}{return} \PY{n}{provean\PYZus{}input}
+        
+        \PY{k}{def} \PY{n+nf}{output\PYZus{}writer}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{outfile}\PY{p}{,} \PY{n}{delim}\PY{p}{)}\PY{p}{:}
+            \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{outfile}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{k}{as} \PY{n}{fh}\PY{p}{:}
+                \PY{n}{writer} \PY{o}{=} \PY{n}{csv}\PY{o}{.}\PY{n}{writer}\PY{p}{(}\PY{n}{fh}\PY{p}{,} \PY{n}{delimiter} \PY{o}{=} \PY{n}{delim}\PY{p}{)}
+                \PY{n}{writer}\PY{o}{.}\PY{n}{writerows}\PY{p}{(}\PY{n}{l}\PY{p}{)}
+                    
+        \PY{n}{variants} \PY{o}{=} \PY{n}{file\PYZus{}reader}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mutations.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{provean\PYZus{}input} \PY{o}{=} \PY{n}{provean\PYZus{}input\PYZus{}formatter}\PY{p}{(}\PY{n}{variants}\PY{p}{)}
+        \PY{n}{output\PYZus{}writer}\PY{p}{(}\PY{n}{provean\PYZus{}input}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{provean\PYZus{}input.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \section{Making a feature matrix}\label{making-a-feature-matrix}
+
+The tabulated PROVEAN output is then related back to the originial
+mutation data, so that disease outcome and protein domain data can be
+added. The dictonary \texttt{domains} maps certain amino acid positions
+to NCBI-annotated protein regions, \texttt{properties} maps single
+letter amino acid codes to a set of chemical properties, and
+\texttt{diseases} maps amino acid changes (in the format A{[}pos{]}B,
+where A is the reference residue and B is the altered residue) to
+disease phenotypes according to published data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}}
+        \PY{l+s+sd}{NCBI\PYZus{}domains = \PYZob{}37: \PYZdq{}phosphorylation site\PYZdq{},}
+        \PY{l+s+sd}{           56: \PYZdq{}phosphorylation site\PYZdq{},}
+        \PY{l+s+sd}{           range(72,75): \PYZdq{}interaction with phosphoinositide\PYZhy{}3 kinase\PYZdq{},}
+        \PY{l+s+sd}{           range(78,99): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           range(122,143): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           218: \PYZdq{}phosphorylation site\PYZdq{},}
+        \PY{l+s+sd}{           265: \PYZdq{}phosphorylation site\PYZdq{},}
+        \PY{l+s+sd}{           range(279,299): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           range(311,329): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           442: \PYZdq{}phosphorylation site\PYZdq{},}
+        \PY{l+s+sd}{           548: \PYZdq{}phosphorylation site\PYZdq{},}
+        \PY{l+s+sd}{           range(763,783): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           range(834,857): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           range(909,929): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           933: \PYZdq{}phosphorylation site by PKA\PYZdq{},}
+        \PY{l+s+sd}{           range(942,961): \PYZdq{}transmembrane region\PYZdq{},}
+        \PY{l+s+sd}{           range(976,997): \PYZdq{}transmembrane region\PYZdq{}\PYZcb{}}
+        \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}}
+        
+        \PY{n}{pfam\PYZus{}domains} \PY{o}{=} \PY{p}{\PYZob{}}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{33}\PY{p}{,}\PY{l+m+mi}{102}\PY{p}{)}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cation\PYZus{}ATPase\PYZus{}N}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                        \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{153}\PY{p}{,}\PY{l+m+mi}{345}\PY{p}{)}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{E1\PYZhy{}E2\PYZus{}ATPase}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                        \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{416}\PY{p}{,}\PY{l+m+mi}{512}\PY{p}{)}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cation\PYZus{}ATPase}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                        \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{789}\PY{p}{,}\PY{l+m+mi}{999}\PY{p}{)}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cation\PYZus{}ATPase\PYZus{}C}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+        
+        \PY{n}{properties} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{R}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{charged}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{K}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{charged}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{D}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{charged}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{E}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{charged}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Q}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{N}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{H}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{S}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{T}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{C}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{W}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{I}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{L}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{M}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{F}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{V}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{P}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{G}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+        
+        \PY{k}{def} \PY{n+nf}{get\PYZus{}domain}\PY{p}{(}\PY{n}{position}\PY{p}{)}\PY{p}{:}
+            \PY{k}{for} \PY{n}{key} \PY{o+ow}{in} \PY{n}{pfam\PYZus{}domains}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                \PY{k}{if} \PY{n}{position} \PY{o+ow}{in} \PY{n}{key}\PY{p}{:}
+                    \PY{k}{return} \PY{n}{pfam\PYZus{}domains}\PY{p}{[}\PY{n}{key}\PY{p}{]}
+            \PY{k}{return} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{unannotated domain}\PY{l+s+s2}{\PYZdq{}}
+        
+        \PY{k}{def} \PY{n+nf}{get\PYZus{}chemical\PYZus{}properties}\PY{p}{(}\PY{n}{amino\PYZus{}acid}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{properties}\PY{p}{[}\PY{n}{amino\PYZus{}acid}\PY{p}{]}
+        
+        \PY{k}{def} \PY{n+nf}{prop\PYZus{}features}\PY{p}{(}\PY{n}{prop}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{prop} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{charged}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{prop} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{polar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{prop} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hydrophobic}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+        
+        \PY{k}{def} \PY{n+nf}{ncbi\PYZus{}domain\PYZus{}features}\PY{p}{(}\PY{n}{domain}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{phosphorylation site}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{interaction with phosphoinositide\PYZhy{}3 kinase}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{transmembrane region}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{phosphorylation site by PKA}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+        
+        \PY{k}{def} \PY{n+nf}{pfam\PYZus{}domain\PYZus{}features}\PY{p}{(}\PY{n}{domain}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cation\PYZus{}ATPase\PYZus{}N}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{E1\PYZhy{}E2\PYZus{}ATPase}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cation\PYZus{}ATPase}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cation\PYZus{}ATPase\PYZus{}C}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+            \PY{k}{elif} \PY{n}{domain} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{unannotated domain}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+                \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+            
+        
+        \PY{k}{def} \PY{n+nf}{provean\PYZus{}sift\PYZus{}features}\PY{p}{(}\PY{n}{provean}\PY{p}{,} \PY{n}{sift}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{provean} \PY{o}{\PYZlt{}} \PY{o}{\PYZhy{}}\PY{l+m+mf}{2.5}\PY{p}{:}
+                \PY{n}{p\PYZus{}pred} \PY{o}{=} \PY{l+m+mi}{1}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{p\PYZus{}pred} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{if} \PY{n}{sift} \PY{o}{\PYZgt{}} \PY{l+m+mf}{0.05}\PY{p}{:}
+                \PY{n}{s\PYZus{}pred} \PY{o}{=} \PY{l+m+mi}{1}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{s\PYZus{}pred} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{return} \PY{p}{[}\PY{n}{provean}\PY{p}{,} \PY{n}{p\PYZus{}pred}\PY{p}{,} \PY{n}{sift}\PY{p}{,} \PY{n}{s\PYZus{}pred}\PY{p}{]}
+            
+        \PY{n}{diseases} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+        
+        \PY{k}{for} \PY{n}{variant} \PY{o+ow}{in} \PY{n}{variants}\PY{p}{:}
+            \PY{n}{diseases}\PY{p}{[}\PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{substitution}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)}\PY{p}{]} \PY{o}{=} \PY{n}{variant}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{disease}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        
+        \PY{n}{provean\PYZus{}output} \PY{o}{=} \PY{n}{file\PYZus{}reader}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{provean\PYZus{}output.tsv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    Here, I define the custom object \texttt{Variant}, which contains a
+method \texttt{get\_feature\_vector} which constructs a 16-dimensional
+feature vector for that variant. These feature vectors are stored in the
+list \texttt{feature\_vectors}, and their corresponding disease state is
+stored in the list \texttt{disease\_list}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{class} \PY{n+nc}{Variant}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{ref\PYZus{}aa}\PY{p}{,} \PY{n}{pos}\PY{p}{,} \PY{n}{alt\PYZus{}aa}\PY{p}{,} \PY{n}{provean}\PY{p}{,} \PY{n}{sift}\PY{p}{)}\PY{p}{:}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ref\PYZus{}aa} \PY{o}{=} \PY{n}{ref\PYZus{}aa}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alt\PYZus{}aa} \PY{o}{=} \PY{n}{alt\PYZus{}aa}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{pos} \PY{o}{=} \PY{n}{pos}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{domain} \PY{o}{=} \PY{n}{get\PYZus{}domain}\PY{p}{(}\PY{n}{pos}\PY{p}{)}
+                \PY{c+c1}{\PYZsh{}self.domain\PYZus{}features = pfam\PYZus{}domain\PYZus{}features(self.domain)}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ref\PYZus{}aa\PYZus{}prop} \PY{o}{=} \PY{n}{get\PYZus{}chemical\PYZus{}properties}\PY{p}{(}\PY{n}{ref\PYZus{}aa}\PY{p}{)}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alt\PYZus{}aa\PYZus{}prop} \PY{o}{=} \PY{n}{get\PYZus{}chemical\PYZus{}properties}\PY{p}{(}\PY{n}{alt\PYZus{}aa}\PY{p}{)}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{provean} \PY{o}{=} \PY{n}{provean}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sift} \PY{o}{=} \PY{n}{sift}
+                \PY{k}{try}\PY{p}{:}
+                    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{disease} \PY{o}{=} \PY{n}{diseases}\PY{p}{[}\PY{n}{ref\PYZus{}aa} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{pos}\PY{p}{)} \PY{o}{+} \PY{n}{alt\PYZus{}aa}\PY{p}{]}
+                \PY{k}{except} \PY{n+ne}{KeyError}\PY{p}{:}
+                    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{disase} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{null}\PY{l+s+s2}{\PYZdq{}}
+            \PY{k}{def} \PY{n+nf}{get\PYZus{}feature\PYZus{}vector}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{n}{aa\PYZus{}prop\PYZus{}vector} \PY{o}{=} \PY{n}{prop\PYZus{}features}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ref\PYZus{}aa\PYZus{}prop}\PY{p}{)} \PY{o}{+} \PY{n}{prop\PYZus{}features}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alt\PYZus{}aa\PYZus{}prop}\PY{p}{)}
+                \PY{n}{domain\PYZus{}vector} \PY{o}{=} \PY{n}{pfam\PYZus{}domain\PYZus{}features}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{domain}\PY{p}{)}
+                \PY{n}{provean\PYZus{}sift\PYZus{}vector} \PY{o}{=} \PY{n}{provean\PYZus{}sift\PYZus{}features}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{provean}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sift}\PY{p}{)}
+                \PY{k}{return} \PY{p}{[}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{pos}\PY{p}{]} \PY{o}{+} \PY{n}{aa\PYZus{}prop\PYZus{}vector} \PY{o}{+} \PY{n}{domain\PYZus{}vector} \PY{o}{+} \PY{n}{provean\PYZus{}sift\PYZus{}vector} 
+            \PY{k}{def} \PY{n+nf}{get\PYZus{}disease}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{disease}
+            \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ref\PYZus{}aa: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{, alt\PYZus{}aa: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{, pos: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{, ref\PYZus{}aa\PYZus{}prop: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{, alt\PYZus{}aa\PYZus{}prop: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{, PROVEAN\PYZus{}score: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{, SIFT\PYZus{}score: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}
+                        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ref\PYZus{}aa}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alt\PYZus{}aa}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{pos}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{ref\PYZus{}aa\PYZus{}prop}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{alt\PYZus{}aa\PYZus{}prop}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{provean}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{sift}\PY{p}{)}
+        
+        \PY{n}{feature\PYZus{}vectors} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        \PY{n}{disease\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        
+        \PY{k}{for} \PY{n}{var} \PY{o+ow}{in} \PY{n}{provean\PYZus{}output}\PY{p}{:}
+            \PY{k}{if} \PY{n}{var}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{PROTEIN\PYZus{}ID}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{==} \PY{n}{NCBI\PYZus{}ref\PYZus{}id}\PY{p}{:}
+                \PY{n}{v} \PY{o}{=} \PY{n}{Variant}\PY{p}{(}\PY{n}{var}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RESIDUE\PYZus{}REF}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n+nb}{int}\PY{p}{(}\PY{n}{var}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{POSITION}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{var}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RESIDUE\PYZus{}ALT}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n+nb}{float}\PY{p}{(}\PY{n}{var}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pSCORE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb}{float}\PY{p}{(}\PY{n}{var}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{sSCORE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                \PY{n}{feature\PYZus{}vectors}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{v}\PY{o}{.}\PY{n}{get\PYZus{}feature\PYZus{}vector}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                \PY{n}{disease\PYZus{}list}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{v}\PY{o}{.}\PY{n}{get\PYZus{}disease}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \section{Training the Support Vector Classifier
+(SVC)}\label{training-the-support-vector-classifier-svc}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{from} \PY{n+nn}{sklearn} \PY{k}{import} \PY{n}{svm}
+        
+        \PY{n}{classifier} \PY{o}{=} \PY{n}{svm}\PY{o}{.}\PY{n}{SVC}\PY{p}{(}\PY{p}{)}
+        \PY{n}{classifier}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{feature\PYZus{}vectors}\PY{p}{,} \PY{n}{disease\PYZus{}list}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} SVC(C=1.0, cache\_size=200, class\_weight=None, coef0=0.0,
+          decision\_function\_shape='ovr', degree=3, gamma='auto', kernel='rbf',
+          max\_iter=-1, probability=False, random\_state=None, shrinking=True,
+          tol=0.001, verbose=False)
+\end{Verbatim}
+            
+    \section{Making predictions}\label{making-predictions}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{pos} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{enter position of the amino acid variant: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ref\PYZus{}aa} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{enter the single letter code of the reference amino acid: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{alt\PYZus{}aa} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{enter the single letter code of the altered amino acid: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{provean} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{enter the PROVEAN score of the variant: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{sift} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{enter the SIFT score of the variant: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{v} \PY{o}{=} \PY{n}{Variant}\PY{p}{(}\PY{n}{ref\PYZus{}aa}\PY{p}{,} \PY{n+nb}{int}\PY{p}{(}\PY{n}{pos}\PY{p}{)}\PY{p}{,} \PY{n}{alt\PYZus{}aa}\PY{p}{,} \PY{n+nb}{float}\PY{p}{(}\PY{n}{provean}\PY{p}{)}\PY{p}{,} \PY{n+nb}{float}\PY{p}{(}\PY{n}{sift}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{predicted disease phenotype: }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{classifier}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{p}{[}\PY{n}{v}\PY{o}{.}\PY{n}{get\PYZus{}feature\PYZus{}vector}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+predicted disease phenotype: AHC
+
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
