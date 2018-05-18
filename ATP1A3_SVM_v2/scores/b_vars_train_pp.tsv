@@ -1,0 +1,34 @@
+#o_acc               	 o_pos	o_aa1	o_aa2	rsid      	acc       	   pos	aa1	aa2	        prediction	 pph2_prob	  pph2_FPR	  pph2_TPR
+NP_689509.1         	  1004	    G	    A	         ?	P13637    	  1004	  G	  A	            benign	     0.264	     0.117	      0.91
+NP_689509.1         	   990	    V	    I	         ?	P13637    	   990	  V	  I	            benign	         0	         1	         1
+NP_689509.1         	   969	    R	    C	         ?	P13637    	   969	  R	  C	 probably damaging	     0.991	    0.0326	     0.711
+NP_689509.1         	   966	    V	    M	         ?	P13637    	   966	  V	  M	            benign	     0.037	     0.176	     0.945
+NP_689509.1         	   905	    E	    D	         ?	P13637    	   905	  E	  D	 possibly damaging	     0.645	    0.0881	     0.866
+NP_689509.1         	   885	    V	    I	         ?	P13637    	   885	  V	  I	            benign	     0.001	     0.852	     0.994
+NP_689509.1         	   883	    R	    H	         ?	P13637    	   883	  R	  H	 possibly damaging	     0.919	    0.0594	     0.811
+NP_689509.1         	   872	    N	    K	         ?	P13637    	   872	  N	  K	            benign	         0	         1	         1
+NP_689509.1         	   871	    G	    S	         ?	P13637    	   871	  G	  S	            benign	     0.001	     0.852	     0.994
+NP_689509.1         	   831	    T	    M	         ?	P13637    	   831	  T	  M	            benign	     0.267	     0.117	     0.909
+NP_689509.1         	   830	    R	    Q	         ?	P13637    	   830	  R	  Q	            benign	     0.001	     0.852	     0.994
+NP_689509.1         	   820	    D	    N	         ?	P13637    	   820	  D	  N	 probably damaging	     0.972	    0.0442	     0.766
+NP_689509.1         	   698	    Q	    H	         ?	P13637    	   698	  Q	  H	            benign	     0.137	     0.137	     0.924
+NP_689509.1         	   659	    D	    H	         ?	P13637    	   659	  D	  H	 probably damaging	     0.985	    0.0375	      0.74
+NP_689509.1         	   642	    V	    I	         ?	P13637    	   642	  V	  I	            benign	         0	         1	         1
+NP_689509.1         	   636	    A	    T	         ?	P13637    	   636	  A	  T	            benign	         0	         1	         1
+NP_689509.1         	   572	    N	    D	         ?	P13637    	   572	  N	  D	            benign	         0	         1	         1
+NP_689509.1         	   571	    D	    N	         ?	P13637    	   571	  D	  N	            benign	         0	         1	         1
+NP_689509.1         	   521	    D	    E	         ?	P13637    	   521	  D	  E	            benign	     0.031	     0.181	     0.947
+NP_689509.1         	   507	    R	    H	         ?	P13637    	   507	  R	  H	 probably damaging	     0.983	    0.0387	     0.745
+NP_689509.1         	   507	    R	    C	         ?	P13637    	   507	  R	  C	            benign	     0.027	     0.186	     0.948
+NP_689509.1         	   492	    R	    Q	         ?	P13637    	   492	  R	  Q	            benign	     0.004	     0.408	     0.975
+NP_689509.1         	   491	    N	    S	         ?	P13637    	   491	  N	  S	            benign	         0	         1	         1
+NP_689509.1         	   463	    R	    H	         ?	P13637    	   463	  R	  H	            benign	         0	         1	         1
+NP_689509.1         	   463	    R	    C	         ?	P13637    	   463	  R	  C	 possibly damaging	     0.679	    0.0846	     0.862
+NP_689509.1         	   422	    V	    A	         ?	P13637    	   422	  V	  A	            benign	     0.001	     0.852	     0.994
+NP_689509.1         	   247	    V	    M	         ?	P13637    	   247	  V	  M	 probably damaging	     0.988	    0.0353	     0.727
+NP_689509.1         	    84	    R	    Q	         ?	P13637    	    84	  R	  Q	            benign	     0.057	     0.162	     0.939
+NP_689509.1         	    64	    R	    Q	         ?	P13637    	    64	  R	  Q	            benign	     0.115	     0.142	     0.927
+NP_689509.1         	    19	    R	    H	         ?	P13637    	    19	  R	  H	            benign	     0.005	      0.26	     0.968
+NP_689509.1         	    19	    R	    C	         ?	P13637    	    19	  R	  C	 probably damaging	     0.992	    0.0314	     0.704
+NP_689509.1         	     9	    D	    G	         ?	P13637    	     9	  D	  G	            benign	         0	         1	         1
+NP_689509.1         	     6	    D	    E	         ?	P13637    	     6	  D	  E	            benign	         0	         1	         1
