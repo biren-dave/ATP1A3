@@ -1,6 +1,7 @@
 from skbio import TabularMSA, DNA, Protein
 import csv
 import matplotlib.pyplot as plt
+import json
 
 n_aln = "ATP1A3_muscle_250_n.aln"
 n_query_seq = "NM_152296.5" #human ATP1A3 transcript 1
@@ -14,11 +15,11 @@ count = 1
 
 for c, score in zip(str(n_seqs[n_query_seq]), con_scores):
     if c != "-":
-        nuc_scores[count] = (c, score)
+        nuc_scores[count] = score
         count += 1
 
 x_n = [key for key in nuc_scores.keys()]
-y_n = [nuc_scores[key][1] for key in nuc_scores.keys()]
+y_n = [nuc_scores[key] for key in nuc_scores.keys()]
 
 p_aln = "ATP1A3_muscle_250_p.aln"
 p_query_seq = "NP_689509.1"
@@ -33,11 +34,18 @@ count = 1
 
 for r, score in zip(str(p_seqs[p_query_seq]), con_scores):
     if r != "-":
-        aa_scores[count] = (r, score)
+        aa_scores[count] = score
         count += 1
 
+with open("n_conservation.json", "w") as fh:
+    json.dump(nuc_scores, fh, indent=4)
+
+with open("p_conservation.json", "w") as fh:
+    json.dump(aa_scores, fh, indent=4)
+
+
 x = [key for key in aa_scores.keys()]
-y = [aa_scores[key][1] for key in aa_scores.keys()]
+y = [aa_scores[key] for key in aa_scores.keys()]
 
 def lighten_color(color, amount=0.5):
     """
@@ -84,6 +92,7 @@ for var in b_vars:
 for var in silent:
     n_silent.append(int(var["benchling_pos"]))
 
+'''
 with open("protein_conservation.csv", "w") as fh:
     writer = csv.writer(fh)
     writer.writerow(["position", "ref", "conservation"])
@@ -95,7 +104,7 @@ with open("nucleotide_conservation.csv", "w") as fh:
     writer.writerow(["position", "ref", "conservation"])
     for key in nuc_scores.keys():
         writer.writerow([key, nuc_scores[key][0], nuc_scores[key][1]])
-
+'''
 # Generating plots
 '''
 plt.subplot(2, 1, 1)
