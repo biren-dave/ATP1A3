@@ -18,7 +18,7 @@ def p_var_converter(in_var):
     alt_res = ((in_var.split(".")[-1])[-3:]).lower()
     res_pos = (in_var.split(".")[-1])[3:-3]
 
-    return [int(res_pos), single_letter[ref_res], single_letter[alt_res]]
+    return [int(res_pos), single_letter[ref_res], single_letter[alt_res]]  
 
 def coord_conveter(exac_coord):
     return (-1 * exac_coord) + 42501650

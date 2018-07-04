@@ -17,16 +17,19 @@ def principal_ca(filepath):
 
     x = StandardScaler().fit_transform(x)
 
-    pca = PCA(n_components = 2)
+    pca = PCA(n_components = 3)
     principalComponents = pca.fit_transform(x)
-    principalDf = pd.DataFrame(data = principalComponents, columns = ["principal component 1", "principal component 2"])
+    principalDf = pd.DataFrame(data = principalComponents, columns = ["principal component 1", "principal component 2", "pc 3"])
     finalDf = pd.concat([principalDf, df[["target"]], df[["count"]]], axis = 1)
+
+    print(pca.explained_variance_ratio_)
 
     return finalDf
 
 df_train = principal_ca("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v3/feature_vectors/training_features.csv")
-df_test = principal_ca("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v3/feature_vectors/testing_features.csv")
+#df_test = principal_ca("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v3/feature_vectors/testing_features.csv")
 
+'''
 fig = plt.figure(figsize = (8,8))
 ax = fig.add_subplot(1,1,1)
 ax.set_xlabel("Principal Component 1", fontsize = 15)
@@ -42,3 +45,4 @@ ax.legend(targets)
 ax.grid()
 plt.show()
 #plt.savefig("2-component PCA.jpg")
+'''

@@ -12,9 +12,9 @@ def csv_reader(infile):
     return data
 
 def list_split(l):
-    midpoint = int(math.ceil(len(l) / 2))
-    l1 = l[:midpoint]
-    l2 = l[midpoint:]
+    m = int(math.ceil(len(l) / 2))
+    l1 = l[:m]
+    l2 = l[m:]
     return (l1, l2)
 
 def csv_output(outfile, l):
