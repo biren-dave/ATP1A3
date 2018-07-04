@@ -1,0 +1,290 @@
+{
+    "G358C": {
+        "id": 1,
+        "pos": 358,
+        "ref": "G",
+        "alt": "C",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 1226
+    },
+    "D805H": {
+        "id": 2,
+        "pos": 805,
+        "ref": "D",
+        "alt": "H",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2567
+    },
+    "S137Y": {
+        "id": 3,
+        "pos": 137,
+        "ref": "S",
+        "alt": "Y",
+        "target": "pathogenic",
+        "count": 4,
+        "n_pos": 564
+    },
+    "C333F": {
+        "id": 4,
+        "pos": 333,
+        "ref": "C",
+        "alt": "F",
+        "target": "pathogenic",
+        "count": 3,
+        "n_pos": 1152
+    },
+    "G123R": {
+        "id": 5,
+        "pos": 123,
+        "ref": "G",
+        "alt": "R",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 521
+    },
+    "C927Y": {
+        "id": 6,
+        "pos": 927,
+        "ref": "C",
+        "alt": "Y",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2394
+    },
+    "T804I": {
+        "id": 7,
+        "pos": 804,
+        "ref": "T",
+        "alt": "I",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2565
+    },
+    "T771I": {
+        "id": 8,
+        "pos": 771,
+        "ref": "T",
+        "alt": "I",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2466
+    },
+    "A955D": {
+        "id": 9,
+        "pos": 955,
+        "ref": "A",
+        "alt": "D",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 3018
+    },
+    "I274N": {
+        "id": 10,
+        "pos": 274,
+        "ref": "I",
+        "alt": "N",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 975
+    },
+    "D801N": {
+        "id": 11,
+        "pos": 801,
+        "ref": "D",
+        "alt": "N",
+        "target": "pathogenic",
+        "count": 61,
+        "n_pos": 2555
+    },
+    "D742Y": {
+        "id": 12,
+        "pos": 742,
+        "ref": "D",
+        "alt": "Y",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2378
+    },
+    "G867D": {
+        "id": 13,
+        "pos": 867,
+        "ref": "G",
+        "alt": "D",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2754
+    },
+    "G755A": {
+        "id": 14,
+        "pos": 755,
+        "ref": "G",
+        "alt": "A",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2418
+    },
+    "G706R": {
+        "id": 15,
+        "pos": 706,
+        "ref": "G",
+        "alt": "R",
+        "target": "pathogenic",
+        "count": 4,
+        "n_pos": 2270
+    },
+    "D801E": {
+        "id": 16,
+        "pos": 801,
+        "ref": "D",
+        "alt": "E",
+        "target": "pathogenic",
+        "count": 2,
+        "n_pos": 2556
+    },
+    "N773I": {
+        "id": 17,
+        "pos": 773,
+        "ref": "N",
+        "alt": "I",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2472
+    },
+    "E818K": {
+        "id": 18,
+        "pos": 818,
+        "ref": "E",
+        "alt": "K",
+        "target": "pathogenic",
+        "count": 7,
+        "n_pos": 2606
+    },
+    "V322D": {
+        "id": 19,
+        "pos": 322,
+        "ref": "V",
+        "alt": "D",
+        "target": "pathogenic",
+        "count": 2,
+        "n_pos": 1119
+    },
+    "D801V": {
+        "id": 20,
+        "pos": 801,
+        "ref": "D",
+        "alt": "V",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2556
+    },
+    "Q140L": {
+        "id": 21,
+        "pos": 140,
+        "ref": "Q",
+        "alt": "L",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 573
+    },
+    "L802P": {
+        "id": 22,
+        "pos": 802,
+        "ref": "L",
+        "alt": "P",
+        "target": "pathogenic",
+        "count": 2,
+        "n_pos": 2559
+    },
+    "D992Y": {
+        "id": 23,
+        "pos": 992,
+        "ref": "D",
+        "alt": "Y",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 3128
+    },
+    "L715P": {
+        "id": 24,
+        "pos": 715,
+        "ref": "L",
+        "alt": "P",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2998,
+    },
+    "T370N": {
+        "id": 25,
+        "pos": 370,
+        "ref": "T",
+        "alt": "N",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 1263
+    },
+    "T613M": {
+        "id": 26,
+        "pos": 613,
+        "ref": "T",
+        "alt": "M",
+        "target": "pathogenic",
+        "count": 3,
+        "n_pos": 1992
+    },
+    "G947R": {
+        "id": 27,
+        "pos": 947,
+        "ref": "G",
+        "alt": "R",
+        "target": "pathogenic",
+        "count": 18,
+        "n_pos": 2993
+    },
+    "G358D": {
+        "id": 28,
+        "pos": 358,
+        "ref": "G",
+        "alt": "D",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 1227
+    },
+    "R756C": {
+        "id": 29,
+        "pos": 756,
+        "ref": "R",
+        "alt": "C",
+        "target": "pathogenic",
+        "count": 5,
+        "n_pos": 2420
+    },
+    "M154V": {
+        "id": 30,
+        "pos": 154,
+        "ref": "M",
+        "alt": "V",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 614
+    },
+    "G316V": {
+        "id": 31,
+        "pos": 316,
+        "ref": "G",
+        "alt": "V",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 1101
+    },
+    "N773S": {
+        "id": 32,
+        "pos": 773,
+        "ref": "N",
+        "alt": "S",
+        "target": "pathogenic",
+        "count": 1,
+        "n_pos": 2472
+    }
+}

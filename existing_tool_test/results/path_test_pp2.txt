@@ -1,0 +1,33 @@
+#o_acc               	 o_pos	o_aa1	o_aa2	rsid      	acc       	   pos	aa1	aa2	        prediction	 pph2_prob	  pph2_FPR	  pph2_TPR
+NP_689509.1         	   888	    L	    P	         ?	P13637    	   888	  L	  P	            benign	     0.021	     0.196	     0.951
+NP_689509.1         	   363	    I	    N	         ?	P13637    	   363	  I	  N	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   810	    I	    N	         ?	P13637    	   810	  I	  N	 probably damaging	     0.999	   0.00574	     0.136
+NP_689509.1         	   808	    P	    L	         ?	P13637    	   808	  P	  L	 probably damaging	     0.999	   0.00574	     0.136
+NP_689509.1         	   316	    G	    S	         ?	P13637    	   316	  G	  S	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   129	    V	    M	         ?	P13637    	   129	  V	  M	 probably damaging	     0.998	    0.0112	     0.273
+NP_689509.1         	   292	    L	    R	         ?	P13637    	   292	  L	  R	 probably damaging	     0.993	    0.0301	     0.696
+NP_689509.1         	   923	    D	    Y	         ?	P13637    	   923	  D	  Y	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   322	    V	    I	         ?	P13637    	   322	  V	  I	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   772	    S	    R	         ?	P13637    	   772	  S	  R	 probably damaging	     0.999	   0.00574	     0.136
+NP_689509.1         	   320	    A	    T	         ?	P13637    	   320	  A	  T	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   371	    L	    P	         ?	P13637    	   371	  L	  P	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   755	    G	    C	         ?	P13637    	   755	  G	  C	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   756	    R	    H	         ?	P13637    	   756	  R	  H	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   681	    A	    T	         ?	P13637    	   681	  A	  T	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   331	    T	    I	         ?	P13637    	   331	  T	  I	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   220	    D	    N	         ?	P13637    	   220	  D	  N	 possibly damaging	     0.512	    0.0963	     0.883
+NP_689509.1         	   923	    D	    N	         ?	P13637    	   923	  D	  N	 probably damaging	     0.984	    0.0381	     0.743
+NP_689509.1         	   358	    G	    V	         ?	P13637    	   358	  G	  V	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   839	    L	    P	         ?	P13637    	   839	  L	  P	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   893	    G	    R	         ?	P13637    	   893	  G	  R	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   755	    G	    S	         ?	P13637    	   755	  G	  S	 probably damaging	     0.999	   0.00574	     0.136
+NP_689509.1         	   771	    T	    N	         ?	P13637    	   771	  T	  N	 possibly damaging	     0.525	    0.0959	     0.881
+NP_689509.1         	    89	    G	    A	         ?	P13637    	    89	  G	  A	 probably damaging	     0.998	    0.0112	     0.273
+NP_689509.1         	   583	    D	    Y	         ?	P13637    	   583	  D	  Y	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   277	    E	    K	         ?	P13637    	   277	  E	  K	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   927	    C	    F	         ?	P13637    	   927	  C	  F	 probably damaging	      0.98	    0.0405	     0.753
+NP_689509.1         	   597	    R	    P	         ?	P13637    	   597	  R	  P	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   137	    S	    F	         ?	P13637    	   137	  S	  F	 probably damaging	         1	   0.00026	   0.00018
+NP_689509.1         	   811	    S	    P	         ?	P13637    	   811	  S	  P	 probably damaging	     0.993	    0.0301	     0.696
+NP_689509.1         	   810	    I	    S	         ?	P13637    	   810	  I	  S	 probably damaging	     0.987	     0.036	     0.731
+NP_689509.1         	   815	    E	    K	         ?	P13637    	   815	  E	  K	 probably damaging	         1	   0.00026	   0.00018

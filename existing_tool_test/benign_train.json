@@ -1,0 +1,551 @@
+{
+    "T676P": {
+        "id": 65,
+        "pos": 676,
+        "ref": "T",
+        "alt": "P",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2180
+    },
+    "V642I": {
+        "id": 66,
+        "pos": 642,
+        "ref": "V",
+        "alt": "I",
+        "target": "benign",
+        "count": 8,
+        "n_pos": 2078
+    },
+    "V679I": {
+        "id": 67,
+        "pos": 679,
+        "ref": "V",
+        "alt": "I",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2189
+    },
+    "R507C": {
+        "id": 68,
+        "pos": 507,
+        "ref": "R",
+        "alt": "C",
+        "target": "benign",
+        "count": 2,
+        "n_pos": 1673
+    },
+    "A635T": {
+        "id": 69,
+        "pos": 635,
+        "ref": "A",
+        "alt": "T",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2057
+    },
+    "A636T": {
+        "id": 70,
+        "pos": 636,
+        "ref": "A",
+        "alt": "T",
+        "target": "benign",
+        "count": 6,
+        "n_pos": 2060
+    },
+    "R230W": {
+        "id": 71,
+        "pos": 230,
+        "ref": "R",
+        "alt": "W",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 842
+    },
+    "R64Q": {
+        "id": 72,
+        "pos": 64,
+        "ref": "R",
+        "alt": "Q",
+        "target": "benign",
+        "count": 2,
+        "n_pos": 345
+    },
+    "G398R": {
+        "id": 73,
+        "pos": 398,
+        "ref": "G",
+        "alt": "R",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1346
+    },
+    "D114N": {
+        "id": 74,
+        "pos": 114,
+        "ref": "D",
+        "alt": "N",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 494
+    },
+    "R463C": {
+        "id": 75,
+        "pos": 463,
+        "ref": "R",
+        "alt": "C",
+        "target": "benign",
+        "count": 65,
+        "n_pos": 1541
+    },
+    "I774V": {
+        "id": 76,
+        "pos": 774,
+        "ref": "I",
+        "alt": "V",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2474
+    },
+    "G1004V": {
+        "id": 77,
+        "pos": 1004,
+        "ref": "G",
+        "alt": "V",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 3165
+    },
+    "G706R": {
+        "id": 78,
+        "pos": 706,
+        "ref": "G",
+        "alt": "R",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2270
+    },
+    "P11A": {
+        "id": 79,
+        "pos": 11,
+        "ref": "P",
+        "alt": "A",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 185
+    },
+    "H413Y": {
+        "id": 80,
+        "pos": 413,
+        "ref": "H",
+        "alt": "Y",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1391
+    },
+    "R830G": {
+        "id": 81,
+        "pos": 830,
+        "ref": "R",
+        "alt": "G",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2642
+    },
+    "R254C": {
+        "id": 82,
+        "pos": 254,
+        "ref": "R",
+        "alt": "C",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 914
+    },
+    "V422A": {
+        "id": 83,
+        "pos": 422,
+        "ref": "V",
+        "alt": "A",
+        "target": "benign",
+        "count": 4,
+        "n_pos": 1419
+    },
+    "G16S": {
+        "id": 84,
+        "pos": 16,
+        "ref": "G",
+        "alt": "S",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 200
+    },
+    "S405L": {
+        "id": 85,
+        "pos": 405,
+        "ref": "S",
+        "alt": "L",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1368
+    },
+    "D659N": {
+        "id": 86,
+        "pos": 659,
+        "ref": "D",
+        "alt": "N",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2129
+    },
+    "V990I": {
+        "id": 87,
+        "pos": 990,
+        "ref": "V",
+        "alt": "I",
+        "target": "benign",
+        "count": 2,
+        "n_pos": 3122
+    },
+    "R492Q": {
+        "id": 88,
+        "pos": 492,
+        "ref": "R",
+        "alt": "Q",
+        "target": "benign",
+        "count": 2,
+        "n_pos": 1629
+    },
+    "G1004E": {
+        "id": 89,
+        "pos": 1004,
+        "ref": "G",
+        "alt": "E",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 3165
+    },
+    "D490N": {
+        "id": 90,
+        "pos": 490,
+        "ref": "D",
+        "alt": "N",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1622
+    },
+    "R217C": {
+        "id": 91,
+        "pos": 217,
+        "ref": "R",
+        "alt": "C",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 803
+    },
+    "K13T": {
+        "id": 92,
+        "pos": 13,
+        "ref": "K",
+        "alt": "T",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 192
+    },
+    "P471T": {
+        "id": 93,
+        "pos": 471,
+        "ref": "P",
+        "alt": "T",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1565
+    },
+    "R830Q": {
+        "id": 94,
+        "pos": 830,
+        "ref": "R",
+        "alt": "Q",
+        "target": "benign",
+        "count": 8,
+        "n_pos": 2643
+    },
+    "E905D": {
+        "id": 95,
+        "pos": 905,
+        "ref": "E",
+        "alt": "D",
+        "target": "benign",
+        "count": 4,
+        "n_pos": 2869
+    },
+    "P471L": {
+        "id": 96,
+        "pos": 471,
+        "ref": "P",
+        "alt": "L",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1566
+    },
+    "V311I": {
+        "id": 97,
+        "pos": 311,
+        "ref": "V",
+        "alt": "I",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1085
+    },
+    "E517K": {
+        "id": 98,
+        "pos": 517,
+        "ref": "E",
+        "alt": "K",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1703
+    },
+    "V966M": {
+        "id": 99,
+        "pos": 966,
+        "ref": "V",
+        "alt": "M",
+        "target": "benign",
+        "count": 2,
+        "n_pos": 3050
+    },
+    "M579L": {
+        "id": 100,
+        "pos": 579,
+        "ref": "M",
+        "alt": "L",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1889
+    },
+    "P219A": {
+        "id": 101,
+        "pos": 219,
+        "ref": "P",
+        "alt": "A",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 809
+    },
+    "V288L": {
+        "id": 102,
+        "pos": 288,
+        "ref": "V",
+        "alt": "L",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1016
+    },
+    "A172T": {
+        "id": 103,
+        "pos": 172,
+        "ref": "A",
+        "alt": "T",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 668
+    },
+    "V247M": {
+        "id": 104,
+        "pos": 247,
+        "ref": "V",
+        "alt": "M",
+        "target": "benign",
+        "count": 6,
+        "n_pos": 893
+    },
+    "R461C": {
+        "id": 105,
+        "pos": 461,
+        "ref": "R",
+        "alt": "C",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1535
+    },
+    "E629K": {
+        "id": 106,
+        "pos": 629,
+        "ref": "E",
+        "alt": "K",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2039
+    },
+    "D820N": {
+        "id": 107,
+        "pos": 820,
+        "ref": "D",
+        "alt": "N",
+        "target": "benign",
+        "count": 6,
+        "n_pos": 2612
+    },
+    "V288M": {
+        "id": 108,
+        "pos": 288,
+        "ref": "V",
+        "alt": "M",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1016
+    },
+    "E552Q": {
+        "id": 109,
+        "pos": 552,
+        "ref": "E",
+        "alt": "Q",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1808
+    },
+    "F561S": {
+        "id": 110,
+        "pos": 561,
+        "ref": "F",
+        "alt": "S",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1836
+    },
+    "G106S": {
+        "id": 111,
+        "pos": 106,
+        "ref": "G",
+        "alt": "S",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 470
+    },
+    "S218T": {
+        "id": 112,
+        "pos": 218,
+        "ref": "S",
+        "alt": "T",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 806
+    },
+    "G699R": {
+        "id": 113,
+        "pos": 699,
+        "ref": "G",
+        "alt": "R",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2249
+    },
+    "N491S": {
+        "id": 114,
+        "pos": 491,
+        "ref": "N",
+        "alt": "S",
+        "target": "benign",
+        "count": 3,
+        "n_pos": 1626
+    },
+    "R1000G": {
+        "id": 115,
+        "pos": 1000,
+        "ref": "R",
+        "alt": "G",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 3152
+    },
+    "V29A": {
+        "id": 116,
+        "pos": 29,
+        "ref": "V",
+        "alt": "A",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 240
+    },
+    "D7N": {
+        "id": 117,
+        "pos": 7,
+        "ref": "D",
+        "alt": "N",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 173
+    },
+    "D571N": {
+        "id": 118,
+        "pos": 571,
+        "ref": "D",
+        "alt": "N",
+        "target": "benign",
+        "count": 2,
+        "n_pos": 1865
+    },
+    "N476K": {
+        "id": 119,
+        "pos": 476,
+        "ref": "N",
+        "alt": "K",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1582
+    },
+    "R43W": {
+        "id": 120,
+        "pos": 43,
+        "ref": "R",
+        "alt": "W",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 281
+    },
+    "N489K": {
+        "id": 121,
+        "pos": 489,
+        "ref": "N",
+        "alt": "K",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1621
+    },
+    "R19C": {
+        "id": 122,
+        "pos": 19,
+        "ref": "R",
+        "alt": "C",
+        "target": "benign",
+        "count": 5,
+        "n_pos": 209
+    },
+    "A421S": {
+        "id": 123,
+        "pos": 421,
+        "ref": "A",
+        "alt": "S",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 1415
+    },
+    "E670K": {
+        "id": 124,
+        "pos": 670,
+        "ref": "E",
+        "alt": "K",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2162
+    },
+    "S665P": {
+        "id": 125,
+        "pos": 665,
+        "ref": "S",
+        "alt": "P",
+        "target": "benign",
+        "count": 1,
+        "n_pos": 2147
+    }
+}
