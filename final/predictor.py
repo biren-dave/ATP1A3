@@ -74,20 +74,70 @@ for var in testing_data:
 clf = svm.SVC(kernel="linear", probability=True)
 clf.fit(x_train, y_train)
 
-parser = argparse.ArgumentParser()
-parser.add_argument("positions", help="Input the amino acid position(s) of hATP1A3 (expected range: 1 - 1013) to predict the pathogenicity of if mutated. If inputting more than one position, separate each with a comma (e.g. 45,67,124)", type=str)
-parser.add_argument("-c", "--conf_cutoff", help="Specify the confidence threshold below which predictions are called unsure (expected range: 0.5 - 1.0).", type=float)
-parser.add_argument("-o", "--output_file", help="Enter the file name of the output file.", type=str)
-args = parser.parse_args()
+def predictions(classifier, x_test, y_test):
 
-var_set = args.positions
-cutoff = args.conf_cutoff
-out_file = args.output_file
+    preds = []
 
-parsed = parse_input(var_set)
-x = get_x(parsed)
+    for x, y in zip(x_test, y_test):
+        pred = classifier.predict([x])[0]
+        if pred == "benign":
+            prob = classifier.predict_proba([x])[0][0]
+        elif pred == "pathogenic":
+            prob = classifier.predict_proba([x])[0][1]
+        preds.append({"x": x, "actual": y, "predicted": pred, "probability": prob})
 
-with open(out_file, "w") as fh:
-    writer = csv.writer(fh)
-    writer.writerow(["position", "prediction", "probability benign", "probability pathogenic"])
-    writer.writerows(predict(clf, x, parsed, cutoff))
+    return preds
+
+def stats(predictions, t=0.5):
+    tp, tn, fp, fn = 0, 0, 0, 0
+    unsure = 0
+    tp_x, tn_x, fp_x, fn_x, u_x = [], [], [], [], []
+    for i in predictions:
+        if i["probability"] >= t:
+            if (i["actual"] == "pathogenic") and (i["predicted"] == "pathogenic"):
+                tp += 1
+                tp_x.append(i["x"])
+            elif (i["actual"] == "benign") and (i["predicted"] == "benign"):
+                tn += 1
+                tn_x.append(i["x"])
+            elif (i["actual"] == "benign") and (i["predicted"] == "pathogenic"):
+                fp += 1
+                fp_x.append(i["x"])
+            elif (i["actual"] == "pathogenic") and (i["predicted"] == "benign"):
+                fn += 1
+                fn_x.append(i["x"])
+        elif i["probability"] < t:
+            unsure += 1
+            u_x.append(i["x"])
+
+    tp_x = np.array(tp_x)
+    fp_x = np.array(fp_x)
+    tn_x = np.array(tn_x)
+    fn_x = np.array(fn_x)
+    u_x = np.array(u_x)
+
+    #return {"tp": tp_x, "tn": tn_x, "fp": fp_x, "fn": fn_x, "unsure": u_x}
+    return {"tp": len(tp_x), "tn": len(tn_x), "fp": len(fp_x), "fn": len(fn_x), "unsure": len(u_x)}
+
+pred_y = predictions(clf, x_test, y_test)
+test_stats = stats(pred_y, 0.55)
+
+print(test_stats)
+
+# parser = argparse.ArgumentParser()
+# parser.add_argument("positions", help="Input the amino acid position(s) of hATP1A3 (expected range: 1 - 1013) to predict the pathogenicity of if mutated. If inputting more than one position, separate each with a comma (e.g. 45,67,124)", type=str)
+# parser.add_argument("-c", "--conf_cutoff", help="Specify the confidence threshold below which predictions are called unsure (expected range: 0.5 - 1.0).", type=float)
+# parser.add_argument("-o", "--output_file", help="Enter the file name of the output file.", type=str)
+# args = parser.parse_args()
+#
+# var_set = args.positions
+# cutoff = args.conf_cutoff
+# out_file = args.output_file
+#
+# parsed = parse_input(var_set)
+# x = get_x(parsed)
+#
+# with open(out_file, "w") as fh:
+#     writer = csv.writer(fh)
+#     writer.writerow(["position", "prediction", "probability benign", "probability pathogenic"])
+#     writer.writerows(predict(clf, x, parsed, cutoff))

@@ -81,7 +81,8 @@ def stats(predictions, t=0.5):
     fn_x = np.array(fn_x)
     u_x = np.array(u_x)
 
-    return {"tp": tp_x, "tn": tn_x, "fp": fp_x, "fn": fn_x, "unsure": u_x}
+    #return {"tp": tp_x, "tn": tn_x, "fp": fp_x, "fn": fn_x, "unsure": u_x}
+    return {"tp": len(tp_x), "tn": len(tn_x), "fp": len(fp_x), "fn": len(fn_x), "unsure": len(u_x)}
 
 X = two_feature_std(format_df(training_data))
 y = np.array([i[0] for i in format_df(training_data).loc[:, ["target"]].values])
@@ -111,16 +112,11 @@ x_test = two_feature_std(format_df(testing_data))
 y_test = [i[0] for i in format_df(testing_data).loc[:, ["target"]].values]
 pos_test = [int(i[0]) for i in format_df(testing_data).loc[:, ["pos"]].values]
 
-for x, p in zip(X, pos_train):
-    if p == 801:
-        print(p, clf_2_u.predict([x]), clf_2_u.predict_proba([x]))
-
-for x, p in zip(x_test, pos_test):
-    if p == 810:
-        print(p, clf_2_u.predict([x]), clf_2_u.predict_proba([x]))
 
 pred_y = predictions(clf_2_u, x_test, y_test)
-test_stats = stats(pred_y, 0.50)
+test_stats = stats(pred_y, 1.00)
+
+print(test_stats)
 
 # xx, yy = np.meshgrid(np.linspace(-2, 3, 500), np.linspace(-1, 3, 500))
 # Z = clf_2_u.decision_function(np.c_[xx.ravel(), yy.ravel()])

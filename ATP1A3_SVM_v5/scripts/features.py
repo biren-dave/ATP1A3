@@ -12,7 +12,7 @@ def json_writer(d, file_path):
 p_train = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/pathogenic_train.json")
 p_test = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/pathogenic_test.json")
 b_train = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/benign_train.json")
-b_test = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/benign_train.json")
+b_test = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/benign_test.json")
 
 distances = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/distances.json")
 consurf = json_reader("/home/biren_dave/Documents/ATP1A3/ATP1A3_SVM_v5/consurf.json")
