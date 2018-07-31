@@ -36,7 +36,7 @@ pca = PCA(n_components=2)
 principalComponents = pca.fit_transform(x)
 std_master_pca = pd.DataFrame(principalComponents, columns=["pc_1", "pc_2"])
 
-print(pca.explained_variance_ratio_)
+#print(pca.explained_variance_ratio_)
 
 p_train = [123,755,316,923,801,811,927,706,947,772,137,597,322,839,277,771,771,815,
            810,755,274,810,773,137]
