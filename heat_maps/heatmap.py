@@ -37,7 +37,7 @@ def comp():
     #ax.set_title("Harvest of local farmers (in tons/year)")
     #fig.tight_layout()
     # plt.show()
-    plt.savefig("clf_comp_performance.png")
+    plt.savefig("clf_comp_performance.svg")
 
 def r_comp():
     recur_scores = np.array([[5.505899922,6.111004657,6.111004657,5.925858277,6.253974618,6.10233506,5.948009507,5.219872871,5.263517528,5.263517528],
@@ -75,6 +75,7 @@ def r_comp():
     #ax.set_title("Harvest of local farmers (in tons/year)")
     #fig.tight_layout()
     # plt.show()
-    plt.savefig("clf_comp_performance_recurrent.png")
+    plt.savefig("clf_comp_performance_recurrent.svg")
 
 comp()
+r_comp()
