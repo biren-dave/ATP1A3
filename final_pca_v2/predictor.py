@@ -61,6 +61,53 @@ for p in p_train:
 clf = svm.SVC(kernel="linear")
 clf.fit(x_train, y_train)
 
+colours = []
+
+for y in y_train:
+    if y == "pathogenic":
+        colours.append("k")
+    elif y == "benign":
+        colours.append("w")
+
+plt.Figure(figsize=(8, 8))
+for x, y in zip(x_train, y_train):
+    if y == "pathogenic":
+        a = plt.scatter(x[0], x[1], color="black", edgecolors="black", s=100, label="pathogenic")
+    elif y == "benign":
+        b = plt.scatter(x[0], x[1], color="white", edgecolors="black", s=100, label="benign")
+plt.legend(handles=[a,b])
+plt.xlabel("principal component 1")
+plt.ylabel("principal component 2")
+plt.ylim(-7,7)
+plt.xlim(-7,7)
+plt.savefig("raw_plot.svg")
+
+fig, ax = plt.subplots()
+plt.Figure(figsize=(8, 8))
+
+xx, yy = np.meshgrid(np.linspace(-7, 7, 500), np.linspace(-7, 7, 500))
+Z = clf.decision_function(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+w = clf.coef_[0]
+e = -w[0] / w[1]
+x2 = np.linspace(-7, 7)
+y2 = e * x2 - (clf.intercept_[0]) / w[1]
+ax.plot(x2, y2, lw=5, c="black", ls="--")
+
+ax.contourf(xx, yy, Z, alpha=0.75, cmap=plt.cm.bone_r)
+
+for x, y in zip(x_train, y_train):
+    if y == "pathogenic":
+        a = ax.scatter(x[0], x[1], color="black", edgecolors="black", s=100, label="pathogenic")
+    elif y == "benign":
+        b = ax.scatter(x[0], x[1], color="white", edgecolors="black", s=100, label="benign")
+plt.legend(handles=[a,b])
+plt.xlabel("principal component 1")
+plt.ylabel("principal component 2")
+plt.savefig("classified_plot.svg")
+
+
 x_test, y_test = [], []
 test_pos = []
 
@@ -87,9 +134,13 @@ parser.add_argument("-o", "--output_file", help="Enter the file name of the outp
 parser.add_argument("-f", "--output_figure", help="Enter the file name of the output graph.", type=str)
 args = parser.parse_args()
 
-queries = args.positions.split(",")
+#queries = args.positions.split(",")
+queries = []
 out_file = args.output_file
 fig_name = args.output_figure
+
+for i in range(10):
+    queries.append(i)
 
 plot_x, plot_y = [], []
 labels = []
@@ -104,7 +155,7 @@ for q in queries:
     plot_y.append(x[1])
     labels.append(q)
     p = clf.predict([x])[0]
-    d = clf.decision_function([x])
+    d = clf.decision_function([x])[0]
     distances.append(d)
 
     predictions.append([q, p, d])
@@ -140,7 +191,7 @@ def make_figure():
     ax.contourf(xx, yy, Z, alpha=0.75, cmap=plt.cm.bone_r)
     ax.scatter(plot_x, plot_y, c=colors, s=100)
     for i, txt in enumerate(labels):
-        s = str(txt) + ", d = " + str(distances[i][0])
+        s = str(txt)
         ax.annotate(s, (plot_x[i], plot_y[i]))
         plt.xlabel("principal component 1")
         plt.ylabel("principal component 2")
